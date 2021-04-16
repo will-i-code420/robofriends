@@ -72,6 +72,10 @@ h1 {
 	border-radius: 0 0 50px 50px;
 }
 
+.torso:hover {
+	transform: scaleX(1.5) scaleY(2);
+}
+
 .lower_body {
 	display: flex;
 	align-items: center;
@@ -117,7 +121,7 @@ h1 {
 	border-radius: 15px;
 	background-color: white;
 	transform-origin: center;
-	transition: transform 500ms, background-color 500ms;
+	transition: transform 500ms, background-color 500ms 200ms;
 }
 
 .left_eye {
