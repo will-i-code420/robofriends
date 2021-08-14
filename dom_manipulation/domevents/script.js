@@ -2,7 +2,7 @@ var button = document.getElementById("enter");
 var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
 var list = document.querySelectorAll("li");
-var deleteBtns = document.querySelectorAll(".deleteBtn")
+var deleteBtns = document.querySelectorAll(".deleteBtn");
 
 function inputLength() {
 	return input.value.length;
@@ -13,6 +13,8 @@ function createListElement() {
 	var btn = document.createElement("button");
 	li.appendChild(document.createTextNode(input.value));
 	btn.appendChild(document.createTextNode("X"));
+	li.addEventListener("click", updateItem);
+	btn.addEventListener("click", deleteItem);
 	li.appendChild(btn);
 	ul.appendChild(li);
 	input.value = "";
