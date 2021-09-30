@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Scroll from './Scroll';
-import CardList from './CardList';
-import SearchBox from './SearchBox';
+import Scroll from '../components/Scroll';
+import CardList from '../components/CardList';
+import SearchBox from '../components/SearchBox';
 
 class App extends Component {
 	constructor() {
@@ -25,10 +25,11 @@ class App extends Component {
 		this.setState({ searchField: e.target.value });
 	};
 	render() {
-		const filteredRobots = this.state.robots.filter((robot) => {
-			return robot.name.toLowerCase().includes(this.state.searchField.toLowerCase());
+		const { robots, searchField } = this.state;
+		const filteredRobots = robots.filter((robot) => {
+			return robot.name.toLowerCase().includes(searchField.toLowerCase());
 		});
-		if (this.state.robots.length === 0) {
+		if (!robots.length) {
 			return <h1 className="tc">Loading....</h1>;
 		} else {
 			return (
